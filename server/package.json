@@ -8,6 +8,7 @@
     "dev": "concurrently \"tsc --watch\" \"tsnd --respawn src/server.ts\"",
     "generate": "drizzle-kit generate --config=src/config/drizzle.ts",
     "migrate": "tsx -r dotenv/config src/config/migrate.ts",
+    "seed": "tsx -r dotenv/config src/seeds/index.ts",
     "studio": "drizzle-kit studio --config=src/config/drizzle.ts"
   },
   "keywords": [],
@@ -22,8 +23,10 @@
     "drizzle-orm": "^0.38.3",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^3.3.2",
     "pg": "^8.13.1",
     "postgres": "^3.4.5",
+    "util": "^0.12.5",
     "winston": "^3.17.0",
     "zod": "^3.24.1"
   },

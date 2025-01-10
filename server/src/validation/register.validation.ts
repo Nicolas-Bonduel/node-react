@@ -7,7 +7,7 @@ const registerValidation = z.object({
         // TODO unique
     }) */,
     password: z.string()
-        .min(6, { message: "password must be at elast 6 characters"})
+        .min(6, { message: "password must be at least 6 characters"})
         .regex(/[0-9]/, { message: "password must contain at least one number" })
         .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: "password must contain at least one special character" }),
     email: z.string()

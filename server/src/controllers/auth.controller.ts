@@ -42,7 +42,7 @@ export const register = async (request: Request, response: Response) => {
         if (err instanceof z.ZodError) {
             response.status(400).json({
                 errors: err.errors,
-                message: "Invalid form data"
+                message: err.errors[0].message
             });
             return;
         }
@@ -65,7 +65,6 @@ export const login = async (request: Request, response: Response) => {
             });
             return;
         }
-        logger.info(await verifyPassword(user.password, password));
         if (await verifyPassword(user.password, password) === false) {
             response.status(401).json({
                 message: "Invalid Credentials"
