@@ -7,6 +7,7 @@
     - npm run generate
     - npm run migrate
     - npm run seed
+    - npm run build
 - ***/client***
     - npm i
     - edit .env
