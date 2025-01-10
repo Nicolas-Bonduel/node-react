@@ -53,7 +53,7 @@ export const findByEmail = (email: string) => {
 
 export const addUser = (user: NewUser) => {
     try {
-        return db.insert(users).values(user).returning({ id: users.id }).execute();
+        return db.insert(users).values(user).returning().execute();
     }
     catch (err: any) {
         logger.error(`Err. addUser() - ${err.message}`);

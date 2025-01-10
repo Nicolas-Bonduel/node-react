@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { logger } from "../utils"
 import { getAllProducts, getProductById } from "../models/product.model";
-import { addOrder } from "../models/order.model";
+import { addOrder, getOrdersByUSer } from "../models/order.model";
 import { Product } from "../entities/Product";
 import { addOrderProduct } from "../models/orderProduct.model";
 
@@ -49,6 +49,20 @@ export const purchase = async (request: Request, response: Response) => {
     }
     catch (err: any) {
         logger.error(`Err. purchase() - ${err.message}`);
+        response.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+}
+
+export const getUserOrders = async (request: Request, response: Response) => {
+    try {
+        const orders = await getOrdersByUSer(response.locals.user.id);
+
+        response.status(200).json(orders);
+    }
+    catch (err: any) {
+        logger.error(`Err. getUserOrders() - ${err.message}`);
         response.status(500).json({
             message: "Internal Server Error"
         });

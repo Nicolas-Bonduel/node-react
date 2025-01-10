@@ -26,3 +26,15 @@ export const addOrder = (order: NewOrder) => {
         throw err;
     }
 };
+
+export const getOrdersByUSer = (userId: string) => {
+    try {
+        return db.select().from(orders).where(
+            eq(orders.user, userId)
+        ).execute()
+    }
+    catch (err: any) {
+        logger.error(`Err. getOrdersByUSer() - ${err.message}`);
+        throw err;
+    }
+};
