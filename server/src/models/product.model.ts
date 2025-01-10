@@ -27,15 +27,6 @@ export const getProductById = (id: number) => {
     }
 };
 
-/* export const addProduct = (product: NewProduct) => {
-    try {
-        return db.insert(products).values(product).execute();
-    }
-    catch (err: any) {
-        logger.error(`Err. addProduct() - ${err.message}`);
-        throw err;
-    }
-}; */
 export const addProducts = (products_: (NewProduct)[]) => {
     try {
         return db.insert(products).values(products_).execute();
