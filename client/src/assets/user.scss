@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+#user-page {
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .account {
+        width: 35%;
+        margin: 0 32.5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2980392157);
+    }
+
+    .purchases {
+        width: 60%;
+        margin-top: 2rem;
+
+        .describ {
+            width: 100%;
+        }
+
+        .table-wrapper {
+            padding: 2rem;
+            background-color: #f8f9fa;
+            box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2980392157);
+        }
+
+        table {
+            width:100%;
+            border-collapse: collapse;
+            text-align: left;
+
+            & > * > * > * {
+                padding: .5rem;
+                border-bottom: 1px solid #dee2e6;
+            }
+
+            thead {
+                border-bottom: 2px solid black;
+            }
+
+            tbody {
+
+                tr:nth-of-type(odd) {
+                    background-color: #f5f5f5;
+                }
+            }
+
+            a.btn {
+                padding: 0.25rem 0.75rem;
+                font-weight: 700;
+                border-radius: 3px;
+                transition: .5s;
+                background-color: #FF9312;
+                color: white;
+
+                &:hover {
+                    background-color: white;
+                    color: #ff9312;
+                }
+            }
+        }
+    }
+
+    h2 {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        color: #444;
+        gap: 5%;
+        font-family: 'Roboto Slab', sans-serif;
+    }
+
+    .logout {
+        color: #ff9312;
+        font-weight: bold;
+        padding: .4rem .8rem;
+        border: 1px solid #ff9312;
+        border-radius: 5px;
+        background-color: transparent;
+        transition: color, background-color linear .2s;
+
+        &:hover {
+            color: white;
+            background-color: #ff9312;
+        }
+    }
+
+    .describ {
+        width: 90%;
+        font-weight: 1000;
+        font-size: 20px;
+        text-align: center;
+        color: #FF9312;
+        padding-bottom: .5rem;
+        border-bottom: 1px solid #ff9312;
+    }
+
+    .flex {
+        width: 60%;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        justify-content: end;
+        margin-bottom: 20px;
+
+        span {
+            margin-right: .5rem;
+        }
+    }
+
+    input {
+        font-size: 1rem;
+        padding: .4rem .5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: transparent;
+    }
+
+    .button-save {
+        width: 80px;
+        color: #ff9312;
+        font-weight: bold;
+        padding: .7rem;
+        border: 1px solid #ff9312;
+        border-radius: 50px;
+        background-color: transparent;
+        transition: color, background-color linear .2s;
+        margin: 10px;
+
+        &:hover {
+            color: white;
+            background-color: #ff9312;
+        }
+
+        &.disabled {
+            cursor: not-allowed;
+            opacity: .5;
+        }
+    }
+
+
+
+    .notifier {
+        font-weight: bold;
+        font-style: italic;
+        padding: .3rem .8rem;
+        border-radius: 5px;
+        transition: opacity linear .8s;
+
+        &.success {
+            background-color: #edf9cc;
+            color: #236418;
+        }
+
+        &.ignore {
+            background-color: #fbfcd5;
+            color: #fd9219;
+        }
+
+        &.error {
+            background-color: #ff9090;
+            color: #da1334;
+        }
+    }
+}
+
+.theme-dark #user-page {
+
+    .account {
+        background-color: #1f1f2a;
+        box-shadow: 0 15px 15px rgba(255, 255, 255, 0.2980392157);
+
+        h2 {
+            color: #bbb;
+        }
+
+        input::placeholder {
+            color: #aaa;
+        }
+
+        .button-save {
+
+            &.disabled {
+                opacity: .7;
+            }
+        }
+    }
+
+    .purchases {
+
+        .table-wrapper {
+            background-color: #1f1f2a;
+        }
+
+        table > * > * > * {
+            border-bottom: 1px solid rgb(52, 52, 64);
+        }
+
+        thead {
+            border-bottom: 2px solid white;
+        }
+
+        tbody {
+
+            tr:nth-of-type(odd) {
+                background-color: rgb(42, 42, 54);
+            }
+        }
+    }
+}

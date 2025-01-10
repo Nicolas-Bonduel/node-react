@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+#register {
+    width: 25%;
+    margin: 0 37.5%;
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2980392157);
+
+    .header {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        color: #ff9312;
+        padding-bottom: 3%;
+        border-bottom: 1px solid #ff9312;
+        margin-bottom: 8%;
+    }
+
+    .subheader {
+        margin: 0;
+        width: 90%;
+        align-self: flex-start;
+        color: #555;
+        margin-left: 5%;
+        padding-bottom: 1%;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .subheader:not(:first-child) {
+        margin-top: 7%;
+    }
+
+    input {
+        width: 80%;
+        font-size: 1rem;
+        padding: .4rem .5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: transparent;
+    }
+
+    input:not(:first-child) {
+        margin-top: 1rem;
+    }
+
+    .error {
+        margin: 0;
+        color: red;
+        font-style: italic;
+        align-self: flex-start;
+        margin-left: 10%;
+    }
+
+    button[type="submit"] + .error {
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    button[type="submit"] {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        color: #ff9312;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: .7rem;
+        border: 1px solid #ff9312;
+        border-radius: 50px;
+        background-color: transparent;
+        margin-top: 2rem;
+        transition: color, background-color linear .2s;
+
+        &.disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        &:hover {
+            color: white;
+            background-color: #ff9312;
+        }
+
+        .loader-wrapper-btn {
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+        }
+    }
+}
+
+.theme-dark #register {
+    background-color: #1f1f2a;
+    box-shadow: 0 15px 15px rgba(255, 255, 255, 0.2980392157);
+
+    .subheader {
+        color: white;
+    }
+
+    input::placeholder {
+        color: #aaa;
+    }
+
+    button[type="submit"] {
+        
+        &.disabled {
+            opacity: .7;
+        }
+    }
+}
+h2{
+    font-family: 'Roboto Slab',sans-serif;
+}

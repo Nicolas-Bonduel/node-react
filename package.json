@@ -2,7 +2,7 @@
   "name": "monorepo",
   "version": "1.0.0",
   "scripts": {
-    "dev:server": "pnpm --filter 3wa-server dev",
+    "dev:server": "pnpm --filter 3wa-server start",
     "dev:client": "pnpm --filter 3wa-client dev",
     "dev": "concurrently \"pnpm dev:client\" \"pnpm dev:server\""
   },
